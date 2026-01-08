@@ -21,7 +21,7 @@ export default function CartItem({ item }) {
         />
         <div>
           <p className="line-clamp-1 font-semibold">{item.title}</p>
-          <p>Price / Unit: ₹{item.price}</p>
+          <p>Price / Unit: ${item.price}</p>
         </div>
       </div>
       <div className="flex items-center gap-4">

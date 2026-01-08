@@ -26,7 +26,7 @@ export default function ListingItem({ product }) {
           {product.description}
         </p>
         <p className='text-slate-500 mt-2 font-semibold '>
-          ₹{product.price}
+          ${product.price}
         </p>
         <div className='flex gap-10'>
           <button 

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Zapatos Radiante Caribe",
+    "price": 120.00,
+    "image": "/images/zapatos.png",
+    "description": "Los zapatos son azul y amarillo como la playa. El diseño tiene olas y arena. Son muy cómodos y me gustan mucho.",
+    "category": "ropa",
+    "rating": 4.5,
+    "reviews": 90
+  },
+  {
+    "id": 2,
+    "title": "Camiseta Radiante Playa",
+    "price": 45.00,
+    "image": "/images/camiseta.png",
+    "description": "La camiseta es blanca, azul o amarilla. Tiene el logo en el frente y la palabra Radiante en la espalda. Es muy bonita y popular.",
+    "category": "ropa",
+    "rating": 4.6,
+    "reviews": 110
+  },
+  {
+    "id": 3,
+    "title": "Pantalones Costa Viva",
+    "price": 95.00,
+    "image": "/images/pantalones.png",
+    "description": "Los pantalones tienen el logo en el frente. Son muy cómodos y buenos para caminar o salir. Muchas personas los compraron ayer.",
+    "category": "ropa",
+    "rating": 4.4,
+    "reviews": 70
+  },
+  {
+    "id": 4,
+    "title": "Hoodie Guacamaya",
+    "price": 70.00,
+    "image": "/images/hoodie.png",
+    "description": "El hoodie es blanco, azul o amarillo. Tiene Radiante en la espalda y una guacamaya en el frente.",
+    "category": "ropa",
+    "rating": 4.8,
+    "reviews": 150
+  },
+  {
+    "id": 5,
+    "title": "Gorra Flamingo Azul",
+    "price": 30.00,
+    "image": "/images/cap.png",
+    "description": "La gorra es azul con un flamingo. Es muy ligera y buena por/para(not sure) un dia con sol. Yo conozco muchas personas que la quieren.",
+    "category": "accesorio",
+    "rating": 4.5,
+    "reviews": 80
+  }
+]

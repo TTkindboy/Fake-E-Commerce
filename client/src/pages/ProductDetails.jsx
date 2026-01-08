@@ -2,48 +2,35 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/product/productSlice';
+import productData from '../data/products.json';
 
 export default function ProductDetails() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [cache, setCache] = useState({});
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
   }
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      setLoading(true);
-      try {
-        if (cache[id]) {
-          setProduct(cache[id]);
-          setLoading(false);
-          setError(null);
-        } else {
-          const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-          if (response.ok === false) {
-            setError("Failed to fetch product details");
-            setLoading(false);
-            return;
-          }
-          const data = await response.json();
-          setProduct(data);
-          setCache({ ...cache, [id]: data });
-          setLoading(false);
-          setError(null);
-        }
-      } catch (error) {
+    try {
+      const foundProduct = productData.find(p => p.id === parseInt(id));
+      if (foundProduct) {
+        setProduct(foundProduct);
         setLoading(false);
-        setError(error.message);
+        setError(null);
+      } else {
+        setError("Product not found");
+        setLoading(false);
       }
-    };
-
-    fetchProduct();
-  }, [id, cache]);
+    } catch (error) {
+      setLoading(false);
+      setError(error.message);
+    }
+  }, [id]);
 
   if (loading) {
     return <p className='font-medium sm:font-semibold mt-5'>Loading...</p>;
@@ -66,7 +53,7 @@ export default function ProductDetails() {
         <div className="flex-1">
           <h2 className="text-3xl font-semibold mb-4">{product.title}</h2>
           <p className="text-gray-600 mb-4">{product.description}</p>
-          <p className="text-2xl font-medium mb-6"> ₹{product.price}</p>
+          <p className="text-2xl font-medium mb-6"> ${product.price}</p>
           <button 
             onClick={handleAddToCart} 
             className='bg-gray-800 py-4 px-8 text-white text-semibold rounded-md hover:bg-primary-dark focus:outline-none focus:shadow-outline-primary'

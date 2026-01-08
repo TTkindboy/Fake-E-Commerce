@@ -16,7 +16,7 @@ const PopupOrderSummary = ({ isModalOpen, closeModal, formData, cartItems, total
           Your order will be delivered to {formData.address} within 4 working days.
         </p>
         <p className="mt-2">
-          <span className="font-semibold">Total Cost:</span> ₹{totalPrice.toFixed(2)}
+          <span className="font-semibold">Total Cost:</span> ${totalPrice.toFixed(2)}
           <span className="font-semibold ml-5">Total Items:</span> {totalItems}
         </p>
         <div className="flex flex-col mt-4">
